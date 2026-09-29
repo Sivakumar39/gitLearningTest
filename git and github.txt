@@ -36,4 +36,34 @@ Difference between Git and GitHub!
 
 - The process of moving the changes from staging area to local repo is called 'COMMIT'.
 
-- To commit, USE "git commit -m <commit_message>"
+- To commit, USE "git commit -m <commit_message>".
+
+- "git reset HEAD ~" -> A command to bring back the last commit from local repo to the working directory.
+
+- Assume, you have deleted a file and staged that change.
+    - Now, you're reverting the staged change back into working directory using "git reset".
+    - Deleted file won't be recovered.
+    - To recover the deleted file use, "git reset --hard".
+
+- git rm -f <filePath>
+    - forceful deletion of the file in the working repository.
+
+- git rm --cachec <filename>
+    - remove the file changes from staging area back into the working directory.
+
+- To view the commits, check COMMIT LOGS.
+
+GIT BRANCHING
+    - What's a branch?
+        - It's a seperate line of development.
+    - To view the branches in your local repo, use 'git branch'.
+    - To create a new branch use, 'git branch <branch_name>'.
+    - Note: WHEN you create a new branch, the new branch inherits the state of the branch from which it has been created.
+    - To switch branches, use "git checkout <branch_name>".
+    - To merge a branch with main, switch to the branch and use "git merge -m <merge message>".
+    - MERGE CONFLICT:
+        - Happens when same file has been modified in 2 different branches.
+        - Solution: Manual Resolution.
+
+- To compare various versions/commits, use command "git diff <1st commit> <2nd commit>"
+
