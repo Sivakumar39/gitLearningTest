@@ -20,9 +20,30 @@ git reset HEAD ~
         - You could have committed too early.
         - You could have committed with wrong commit message.     
 
-
+------------------------------
 git reset VS git reset --hard
 ------------------------------
     - git reset will unstage the deletion, but won't restore the deleted file.
-    - git reset --hard will unstage the deletion and restore the file, GIVEN THE FILE EXISTS IN THE HEAD (aka current commit)
-    - 
+    - git reset --hard will unstage the deletion and restore the file to HEAD, GIVEN THE FILE EXISTS IN THE HEAD 
+        (aka current commit)
+
+        git reset                                                                   git reset --hard
+    - unstages the deletion                                                   - unstages the deletion
+    - leaves the file deleted in the working directory                        - resets the working directory to the HEAD.
+                                                                              - Thus deleted file has been restored.
+
+- cat <fileName>: a command used to read a file.
+
+- Summary:
+
+                                            HEAD                STAGING             WORKING DIRECTORY
+    Original                              file exists         file exists           file exists   
+    File deleted and staged               file exists         deleted               deleted
+    git reset                             file exists         file exists           deleted
+    git reset --hard                      file exists         file exists           file exists
+
+
+WARNINGS:
+        - git reset --hard doesn't mean "recover deleted files", in general.
+        - It means: simply restore the staging area and working directory to HEAD.
+        - don't run git reset --hard on production workloads, it would permanently discards the un-committed changes.

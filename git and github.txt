@@ -48,7 +48,7 @@ Difference between Git and GitHub!
 - git rm -f <filePath>
     - forceful deletion of the file in the working repository.
 
-- git rm --cachec <filename>
+- git rm --cache <filename>
     - remove the file changes from staging area back into the working directory.
 
 - To view the commits, check COMMIT LOGS.
