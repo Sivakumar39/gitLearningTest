@@ -65,5 +65,25 @@ GIT BRANCHING
         - Happens when same file has been modified in 2 different branches.
         - Solution: Manual Resolution.
 
+- git log --oneline: compact, one-liner version of commit log.
+
 - To compare various versions/commits, use command "git diff <1st commit> <2nd commit>"
 
+- To toggle between versions, use "git checkout <commit_id>"
+    - Note: It would create a seperate branch.
+
+- Local Repo -> Remote Repo: PUSH
+- Remote Repo -> Local Repo: FETCH
+    - FETCH only brings in remote changes to the memory, changes won't be available in working directory yet.
+    - Solution: Git Pull.
+
+Summary:
+    Git Push: Local Repo -> Remote Repo (git push origin main)
+    Git Fetch: Remote Changes to memory.
+    Git Pull: Merging the changes from remote repo to working directory.
+        - Git Pull = FETCH + Merge.
+
+Additional Notes:
+    - git restore: discards changes to be staged, restores the file to it's last commit state.
+    - git stash: allows you to temporarily set aside your un-commited work, switch to another branch and then bringing all changes with a single command.
+    - NTS git re-base and PR.
