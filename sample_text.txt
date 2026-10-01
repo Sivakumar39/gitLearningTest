@@ -1,3 +1,28 @@
 This is a sample file created to learn Git and GitHub.
 
 -- I have added this line after last commit.
+
+git reset HEAD ~
+    - Moves back my current branch by one commit, while preserving the changes in the working directory.
+    - HEAD - your current commit.
+    - HEAD ~ - parent of your current commit, which is previous commit.
+    - git reset - moves the pointer to that commit.
+    - A -> B -> C (Head) => A -> (Head) [commit c is no-longer part of the current branch, 
+    but the changes introduced by C remain on the working directory]
+    - Assume, you have created a file, inserted some data, staged it and then committed it as part of commit X.
+        - if you reset to the previous commit, the file with the data would still exists.
+        - run git status, you can see "changes yet to staged: your file name".
+        - modify the file further if required and can commit again.
+    
+    - git reset HEAD ~ :  Undo my last commit, but don't throw any new work and work that has been the part of the commit.
+    - Application (above command):
+        - You could have committed wrong files.
+        - You could have committed too early.
+        - You could have committed with wrong commit message.     
+
+
+git reset VS git reset --hard
+------------------------------
+    - git reset will unstage the deletion, but won't restore the deleted file.
+    - git reset --hard will unstage the deletion and restore the file, GIVEN THE FILE EXISTS IN THE HEAD (aka current commit)
+    - 
